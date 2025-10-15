@@ -200,59 +200,6 @@ def run_scraper():
 
         browser.close()
 
-#
-# def run():
-#     with sync_playwright() as p:
-#         browser = p.chromium.launch(headless=True, slow_mo=30)  # headed and slightly slowed
-#         # load saved logged-in session
-#         context = browser.new_context(storage_state=STORAGE_FILE, viewport={"width":1280,"height":800})
-#         page = context.new_page()
-#
-#         # OPTIONAL: set a realistic user agent if you changed earlier
-#         # page.set_extra_http_headers({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; ... )"})
-#
-#         # Go to Marketplace
-#         page.goto("https://www.facebook.com/marketplace", wait_until="domcontentloaded")
-#         human_sleep(1.5, 2.5)
-#         print("Marketplace title:", page.title())
-#
-#         # Perform a search using UI (so requests look like a user)
-#         # Find the search input — selector may differ across accounts / FB versions
-#         try:
-#             search_input = page.query_selector("input[aria-label='Search Marketplace'], input[placeholder='Search Marketplace']")
-#             if search_input:
-#                 search_input.click()
-#                 human_sleep(0.3, 0.8)
-#                 search_input.fill("ps4 pro")
-#                 human_sleep(0.3, 0.8)
-#                 search_input.press("Enter")
-#         except Exception as e:
-#             print("Search input not found or failed:", e)
-#             page.goto("https://www.facebook.com/marketplace/search?query=ps4%20pro", wait_until="networkidle")
-#
-#         human_sleep(2, 3)
-#
-#         # Scroll to load more results (simulate human)
-#         scroll_page(page, scrolls=8, pause=1.0)
-#
-#         # Wait a bit for lazy content
-#         human_sleep(1.5, 2.5)
-#
-#         # Extract visible listings
-#         listings = extract_listings(page)
-#         print(f"Found {len(listings)} candidate listings on page.")
-#
-#         # Save output
-#         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-#             json.dump(listings, f, ensure_ascii=False, indent=2)
-#         print("Saved results to", OUTPUT_FILE)
-#
-#         # Optionally: update and persist any changed storage (cookies/localStorage)
-#         context.storage_state(path=STORAGE_FILE)  # overwrite with current state
-#         print("Updated storage state saved back to", STORAGE_FILE)
-#
-#         browser.close()
-
 if __name__ == "__main__":
     run_scraper()
 
