@@ -1,0 +1,23 @@
+[
+  {
+    "query": "playstation 4",
+    "min_price": 6000,
+    "max_price": 13000,
+    "location_name": "Gurgaon",
+    "location_id": "4058748"
+  },
+  {
+    "query": "ps4",
+    "min_price": 6000,
+    "max_price": 13000,
+    "location_name": "Gurgaon",
+    "location_id": "4058748"
+  },
+  {
+    "query": "Xbox one s",
+    "min_price": 7000,
+    "max_price": 13000,
+    "location_name": "Gurgaon",
+    "location_id": "4058748"
+  }
+]
